@@ -1,0 +1,34 @@
+{
+  "app_title": "PocketFX",
+  "app_subtitle": "Multi-asset analysis tool",
+  "experiments": "Experiments",
+  "new_experiment": "New Experiment",
+  "loading": "Loading...",
+  "error": "Error loading data",
+  "no_data": "No data available",
+  "language": "Language",
+  "lenses": {
+    "retrospective": "Retrospective",
+    "present": "Present (90d MA)",
+    "projection": "Projection (Monte Carlo)"
+  },
+  "fields": {
+    "name": "Name",
+    "asset_a": "Asset A",
+    "asset_b": "Asset B",
+    "amount": "Amount",
+    "date": "Date",
+    "created_at": "Created at"
+  },
+  "analysis": {
+    "disclaimer": "⚠️ Projections are statistical simulations and do not constitute financial advice.",
+    "retrospective_title": "Counterfactual Retrospective",
+    "present_title": "Present vs 90-day Moving Average",
+    "projection_title": "Monte Carlo Projection (90 days)"
+  },
+  "actions": {
+    "view": "View",
+    "delete": "Delete",
+    "back": "Back"
+  }
+}

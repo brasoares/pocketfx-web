@@ -1,0 +1,34 @@
+{
+  "app_title": "PocketFX",
+  "app_subtitle": "多资产分析工具",
+  "experiments": "实验",
+  "new_experiment": "新实验",
+  "loading": "加载中...",
+  "error": "加载数据错误",
+  "no_data": "暂无数据",
+  "language": "语言",
+  "lenses": {
+    "retrospective": "回顾分析",
+    "present": "当前（90日均线）",
+    "projection": "预测（蒙特卡洛）"
+  },
+  "fields": {
+    "name": "名称",
+    "asset_a": "资产A",
+    "asset_b": "资产B",
+    "amount": "金额",
+    "date": "日期",
+    "created_at": "创建于"
+  },
+  "analysis": {
+    "disclaimer": "⚠️ 预测为统计模拟，不构成财务建议。",
+    "retrospective_title": "反事实回顾分析",
+    "present_title": "当前 vs 90日移动平均",
+    "projection_title": "蒙特卡洛预测（90天）"
+  },
+  "actions": {
+    "view": "查看",
+    "delete": "删除",
+    "back": "返回"
+  }
+}

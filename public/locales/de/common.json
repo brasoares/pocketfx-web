@@ -1,0 +1,34 @@
+{
+  "app_title": "PocketFX",
+  "app_subtitle": "Multi-Asset-Analysetool",
+  "experiments": "Experimente",
+  "new_experiment": "Neues Experiment",
+  "loading": "Laden...",
+  "error": "Fehler beim Laden",
+  "no_data": "Keine Daten verfügbar",
+  "language": "Sprache",
+  "lenses": {
+    "retrospective": "Retrospektive",
+    "present": "Gegenwart (GD 90T)",
+    "projection": "Projektion (Monte Carlo)"
+  },
+  "fields": {
+    "name": "Name",
+    "asset_a": "Asset A",
+    "asset_b": "Asset B",
+    "amount": "Betrag",
+    "date": "Datum",
+    "created_at": "Erstellt am"
+  },
+  "analysis": {
+    "disclaimer": "⚠️ Projektionen sind statistische Simulationen und stellen keine Finanzberatung dar.",
+    "retrospective_title": "Kontrafaktische Retrospektive",
+    "present_title": "Gegenwart vs. 90-Tage-Gleitender Durchschnitt",
+    "projection_title": "Monte-Carlo-Projektion (90 Tage)"
+  },
+  "actions": {
+    "view": "Ansehen",
+    "delete": "Löschen",
+    "back": "Zurück"
+  }
+}
