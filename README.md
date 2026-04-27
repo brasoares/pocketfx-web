@@ -1,40 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# PocketFX Web
 
-## Getting Started
+Frontend for the PocketFX multi-asset analysis tool. Displays investment experiments under three analytical lenses: counterfactual retrospective, present vs. 90-day moving average, and Monte Carlo projection.
 
-First, run the development server:
+Developed as the MVP for the **Advanced Backend Development** course — Full Stack Post-Graduation, PUC-Rio.
+
+## Overview
+
+PocketFX lets users explore hypothetical investment experiments ("what if I had put X into BTC 6 months ago?") through an interactive dashboard with three lenses per experiment:
+
+- **Retrospective**: what the investment would be worth today.
+- **Present**: current price vs. 90-day moving average with directional signal.
+- **Projection**: Monte Carlo fan chart (pessimistic p5 / median p50 / optimistic p95) over 90 days.
+
+## Stack
+
+- Next.js 16 (Pages Router, JavaScript)
+- Bootstrap 5 + react-bootstrap
+- react-i18next + i18next — 7 languages with cultural number formatting via `Intl.NumberFormat`
+- Recharts — LineChart and AreaChart
+- Docker
+
+## Supported Languages
+
+| Code | Language |
+|------|----------|
+| en | English |
+| pt-BR | Português |
+| es | Español |
+| fr | Français |
+| de | Deutsch |
+| ja | 日本語 |
+| zh | 中文 |
+
+Number formatting changes automatically per locale (e.g. `1,234.56` in `en`, `1.234,56` in `pt-BR`, `1 234,56` in `fr`).
+
+## Local Setup
+
+Prerequisites: Node.js LTS, Git. The [PocketFX API](https://github.com/brasoares/pocketfx-api) must be running on `http://localhost:8000`.
 
 ```bash
+# Clone the repository
+git clone https://github.com/brasoares/pocketfx-web.git
+cd pocketfx-web
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Running with Docker
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+# Build the image
+docker build -t pocketfx-web .
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# Run the container
+docker run -p 3000:3000 pocketfx-web
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+pocketfx-web/
+├── components/
+│   ├── Navbar.js            # top navigation with language selector
+│   └── LanguageSelector.js  # locale switcher (7 languages)
+├── lib/
+│   ├── i18n.js              # i18next configuration
+│   └── formatNumber.js      # Intl.NumberFormat helpers
+├── pages/
+│   ├── _app.js              # global layout, Bootstrap, i18n init
+│   ├── index.js             # redirects to /experiments
+│   ├── experiments.js       # experiment list
+│   └── experiments/
+│       └── [id].js          # experiment detail — three lenses
+├── public/
+│   └── locales/             # translation files (en, pt-BR, es, fr, de, ja, zh)
+├── styles/
+│   └── globals.css
+├── Dockerfile
+└── next.config.mjs
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Disclaimer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Projection scenarios displayed in the Monte Carlo lens are statistical simulations based on historical volatility. **They do not constitute market forecasts or investment recommendations.**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+Apache 2.0 — see `LICENSE` file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Henoc Soares Freire — [github.com/brasoares](https://github.com/brasoares)
